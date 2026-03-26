@@ -1,0 +1,269 @@
+<html>
+
+<head>
+    <title>Sistema Escolar</title>
+
+    <style>
+        body {
+            background: linear-gradient(120deg, #d9b3ff, #7a3db8);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-top: 40px;
+            color: black;
+            text-shadow: 1px 1px 3px white;
+        }
+
+        .formulario {
+            background-color: #5a189a;
+            width: 600px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid black;
+            margin: auto;
+            color: white;
+            box-shadow: 0px 0px 15px black;
+            transition: 0.3s;
+        }
+
+        .formulario:hover {
+            box-shadow: 0px 0px 25px black;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 7px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 3px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0px 0px 8px #d9b3ff;
+        }
+
+        hr {
+            border: 1px solid #d9b3ff;
+        }
+
+        .cadastrar {
+            cursor: pointer;
+            margin: auto;
+            display: block;
+            padding: 10px;
+            width: 160px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .cadastrar:hover {
+            background-color: #d9b3ff;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .resultado {
+            width: 600px;
+            margin: 20px auto;
+            background-color: #5a189a;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 1px black;
+        }
+
+        .menu{
+            background-color: rgb(243, 177, 177);
+            color: #f5f5f5; 
+            padding: 15px;
+            display: flex;
+            align-items: center;
+         }
+         .menu-esquerda,.menu-centro,.menu-direita{
+            flex: 1;
+
+         }
+         .menu-centro{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+         }
+         .menu-direita{
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+
+
+
+         }
+
+        
+
+    </style>
+
+</head>
+
+<body>
+    
+<div class="menu">
+
+        <div class="menu-esquerda"></div>
+        <div class="menu-centro">
+            <span>Inicio</span>
+            <span>Alunos</span>
+            <span>Professores</span>
+            <span>Funcionarios</span>
+    </div>
+        </div>
+        <div class="menu-direita">
+            <span>Login</span>
+            
+        </div>
+     
+
+
+
+
+
+
+    
+    <div class="titulo">
+        <h1>EEB Dom Jaime de Barros Camara</h1>
+        <p>Cadastro de aluno</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="formulario">
+
+        <form>
+
+            <label>Nome do aluno:</label>
+            <input type="text" id="nome"><br><br>
+
+            <label>Idade:</label>
+            <input type="number" id="idade"><br><br>
+
+            <label>Data de nascimento:</label>
+            <input type="date" id="dataNasc"><br><br>
+
+            <label>CPF do aluno:</label>
+            <input type="text" id="cpf"><br><br>
+
+            <label>Email:</label>
+            <input type="text" id="email"><br><br>
+
+
+            <label>Série:</label>
+            <select id="serie">
+                <option>1º ano</option>
+                <option>2º ano</option>
+                <option>3º ano</option>
+                <option>4º ano</option>
+                <option>5º ano</option>
+                <option>6º ano</option>
+                <option>7º ano</option>
+                <option>8º ano</option>
+                <option>9º ano</option>
+            </select><br><br>
+
+
+            <label>Turno:</label>
+            <select id="turno">
+                <option>Manhã</option>
+                <option>Tarde</option>
+                <option>Noite</option>
+            </select><br><br>
+
+
+            <hr>
+
+            <label>Nome do Pai:</label>
+            <input type="text" id="nomePai"><br><br>
+
+            <label>CPF do Pai:</label>
+            <input type="text" id="cpfPai"><br><br>
+
+
+            <hr>
+
+            <label>Nome da Mãe:</label>
+            <input type="text" id="nomeMae"><br><br>
+
+            <label>CPF da Mãe:</label>
+            <input type="text" id="cpfMae"><br><br>
+
+
+            <button type="button" class="cadastrar" onclick="mostrarDados()">
+                Cadastrar
+            </button>
+
+        </form>
+
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function mostrarDados() {
+
+            let nome = document.getElementById("nome").value;
+            let idade = document.getElementById("idade").value;
+            let dataNasc = document.getElementById("dataNasc").value;
+            let cpf = document.getElementById("cpf").value;
+            let email = document.getElementById("email").value;
+
+            let serie = document.getElementById("serie").value;
+            let turno = document.getElementById("turno").value;
+
+            let nomePai = document.getElementById("nomePai").value;
+            let cpfPai = document.getElementById("cpfPai").value;
+
+            let nomeMae = document.getElementById("nomeMae").value;
+            let cpfMae = document.getElementById("cpfMae").value;
+
+
+            document.getElementById("resultado").innerHTML =
+                "<h2>Dados Informados:</h2>" +
+
+                "Aluno: " + nome + "<br>" +
+                "Idade: " + idade + "<br>" +
+                "Nascimento: " + dataNasc + "<br>" +
+                "CPF: " + cpf + "<br>" +
+                "Email: " + email + "<br>" +
+                "Série: " + serie + "<br>" +
+                "Turno: " + turno + "<br><br>" +
+
+                "<b>Pai</b><br>" +
+                "Nome: " + nomePai + "<br>" +
+                "CPF: " + cpfPai + "<br><br>" +
+
+                "<b>Mãe</b><br>" +
+                "Nome: " + nomeMae + "<br>" +
+                "CPF: " + cpfMae;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
